@@ -1,0 +1,95 @@
+<h1>NgxCSVParser by <a href="https://DevelopersHive.com">Developers Hive</a></h1>
+
+
+<div class="row">
+
+<div class="column">
+  <div class="csv-file-chooser-section">
+
+    <input type="file" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"
+      accept=".csv" />
+  
+    <label>
+      Parse Headers?
+    </label>
+    <select aria-placeholder="Parse headers?" [(ngModel)]="header">
+      <option [value]="true">Yes</option>
+      <option [value]="false">No</option>
+    </select>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Column_Name</th>
+        <th>Descritption</th>
+        <th>Column_Type</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let csvData of csvRecords;let i = index;">
+
+        <td>{{i+1}}</td>
+        <td>
+          <span>{{csvData.Column_Name}}</span>
+        </td>
+        <td>
+          <span>{{csvData.Descritption}}</span>
+        </td>
+        <td>
+          <span>{{csvData.Column_Type}}</span>
+        </td>
+        
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="column">
+  <div class="csv-file-chooser-section">
+
+    <input type="file" #fileImportInput2 name="File Upload" id="csvFileUpload" (change)="fileChangeListener2($event)"
+      accept=".csv" />
+  
+    <label>
+      Parse Headers?
+    </label>
+    <select aria-placeholder="Parse headers?" [(ngModel)]="header">
+      <option [value]="true">Yes</option>
+      <option [value]="false">No</option>
+    </select>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Column_Name</th>
+        <th>Descritption</th>
+        <th>Column_Type</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let csvData of csvRecords2;let i = index;">
+
+        <td>{{i+1}}</td>
+        <td>
+          <span>{{csvData.Column_Name}}</span>
+        </td>
+        <td>
+          <span>{{csvData.Descritption}}</span>
+        </td>
+        <td>
+          <span>{{csvData.Column_Type}}</span>
+        </td>
+        
+
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
+
+</div>
